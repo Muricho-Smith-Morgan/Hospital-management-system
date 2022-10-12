@@ -1,0 +1,48 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<title>Reception</title>
+</head>
+<body>
+	<table class="table  table-bordered">
+		<thead>
+			<tr>
+                <th>No.</th>
+				<th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+				<th>ROOM NO.</th>
+				<th>CHECK IN</th>
+                <th>CHECK OUT</th>
+                <th>AMOUNT</th>
+				<th>STATUS</th>
+                <th>UPDATE</th>
+				
+			</tr>
+		</thead>
+			{% for x in mymembers %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+                   <td>{{ x.name}}</td>
+                   <td>{{ x.phone_number}}</td>
+                   <td>{{ x.email}}</td>
+                   <td>{{ x.address}}</td>
+				   <td>{{ x.room_number}}</td>
+				   <td>{{ x.check_in}}</td>
+                   <td>{{ x.check_out}}</td>
+				   <td>{{ x.amount}}</td>
+				   <td>{% if x.status == "" %}{% else %}<span class="badge bg-warning">{{ x.status }}</span>{% endif %}</td>
+				   <td><a href="{% url 'update' x.id %}" class="btn btn-success">UPDATE</a></td>	   
+				</tr>
+		    {%endfor%}
+
+	</table>
+
+</body>
+</html>
