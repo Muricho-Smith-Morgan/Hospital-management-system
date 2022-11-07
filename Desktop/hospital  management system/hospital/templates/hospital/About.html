@@ -1,0 +1,32 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<title>About Us</title>
+</head>
+<body>
+	<nav>
+		<nav class="navbar"> 
+			<div class="heading">
+				<h2>ROYAL HOPE MEDICAL CENTER</h2>
+			
+		</div>
+			<ul class="links-container">
+				<li class="link-item"><a href="{%url 'hello'%}">Home</a></li>
+				<div class="dropdown">
+					<button class="dropbtn">Login</button>
+					<div class="dropdown-content">
+					  <a href="{%url 'Receptionist'%}">Receptionist</a>
+					  <a href="{%url 'Doctor'%}">Doctor</a>
+					</div>
+				  </div>
+				<li class="link-item"><a href="{%url 'About'%}">About</a></li>
+				<li class="link-item"><a href="{%url 'Contact'%}">Contact</a></li>
+			</ul> 
+		</nav>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'admin login.css' %}">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<title>Reception</title>
+</head>
+<body>
+	<nav>
+		<nav class="navbar"> 
+			<div class="heading">
+				<h2>ROYAL HOPE MEDICAL CENTER</h2>
+			
+		</div>
+			<ul class="links-container">
+				<li class="link-item"><a href="{%url 'hello'%}">Home</a></li>
+				<div class="dropdown">
+					<button class="dropbtn">Login</button>
+					<div class="dropdown-content">
+					  <a href="{%url 'Receptionist'%}">Receptionist</a>
+					  <a href="{%url 'Doctor'%}">Doctor</a>
+					</div>
+				  </div>
+				<li class="link-item"><a href="{%url 'About'%}">About Us</a></li>
+				<li class="link-item"><a href="{%url 'Contact'%}">Contact Us</a></li>
+			</ul> 
+		</nav>
+
+		<h2>RECEPTION</h2>
+<div class="login">
+	<div class="imgcontainer">
+		<img src="{% static 'avatar.png'%}" alt="user" class="avatar">
+	</div>
+<form id="login" method="POST" action="">
+	{% csrf_token %}
+	<label><b>User Name</b></label>
+	<input type="text" name="Username" id="Uname" placeholder="Username" required>
+	<br><br>
+	<label><b>Password</b></label>
+	<input type="password" name="Password1" id="pass" placeholder="Password" required>
+	<br><br>
+	<button>Log In</button>
+
+	{% for message in messages %}
+	<div>
+	{{message}}
+	</div>
+	{% endfor %}
+	
+
+</form>
+</div>
+</body>
+</html>

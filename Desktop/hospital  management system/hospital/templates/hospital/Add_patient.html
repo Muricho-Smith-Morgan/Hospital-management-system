@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="{% static 'Add_patient.css' %}">
+		<title>foobar</title>
+	</head>
+	<body>
+		<div class="container">
+			<h4>Add Patient</h4>
+			<form action="" method="post">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-25">
+						<label for="name">Name</label>
+					</div>
+					<div class="col-75">
+						<input type="text"id="name" name="firstname" placeholder="Your name..">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-25">
+						<label for="number">Phone Number</label>
+					</div>
+					<div class="col-75">
+						<input type="text"id="pnumber" name="phonenumber" placeholder="Your phone number">
+					</div>
+				</div>  
+				<div class="row">
+					<div class="col-25">
+						<label for="email">Enter your Email</label>
+					</div>
+					<div class="col-75">
+						<input type="email"id="pnumber" name="email" placeholder="Email Address">
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-25">
+						<label for="email">Residence</label>
+					</div>
+					<div class="col-75">
+						<input type="text"id="pnumber" name="Residence" placeholder="Area of Residence">
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-25">
+						<label for="email">Enter your national Id</label>
+					</div>
+					<div class="col-75">
+						<input type="number"id="pnumber" name="national_id" placeholder="National Idenity">
+					</div>
+				</div>
+
+				
+
+
+
+
+
+
+
+				<div class="row">
+					<input type="submit" value="submit">
+				</div>
+			</form>
+	</body>
+</html>

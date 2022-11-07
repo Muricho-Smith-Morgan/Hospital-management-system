@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+       
+}
+input[type=text], input[type=email], select{
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+input[type=submit]{
+    background-color: #04aa6d;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    float:left;
+}
+input[type=submit]:hover{
+    background-color: #45a049;
+}
+.container{
+    border-radius: 20px;
+    background-color: lavender; 
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+
+}
+.col-25{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+.col-75{
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+}
+.row::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+@media(max-width:700px){
+    .col-25, .col-75, input[type=submit]{
+        width: 80%;
+        margin-top: 0; 
+    }
+    .container{
+        width: 80%;
+    }
+    .wrapper{
+        margin: 0;
+        padding: 0;
+        margin-bottom: 50px;
+    }
+    }
+   
+h4{
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+ 
+.header{
+    background: #fff; 
+}
+@media(max-width:700px){    
+    .heading{
+        font-size: 18px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+ 
+.heading{
+    color:black;
+}
+.nav-links ul li a{
+    color: black;
+}
+h5{
+    margin-top: 30px;
+    margin-top: 30px;
+  }
+  h4{
+      text-align: center;
+      color: black;
+  }
+
+ 

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+<body>
+
+<style>
+
+</style>
+	<h2>morgan</h2>
+	<table class="table table-condensed table-bordered">
+		<thead>
+			<tr class="table-info">
+                <th>No.</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>Residence</th>
+				<th>National ID</th>
+				<th>DATE</th>
+				<th>Symptoms</th>
+				<th>Disease</th>
+				<th>Status</th>
+				<th>Update</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for patient in patients %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+                   <td>{{ patient.first_name}}</td>
+				   <td>{{ patient.email}}</td>
+				   <td>{{ patient.phone_number}}</td>
+				   <td>{{ patient.residence}}</td>
+				   <td>{{ patient.national_id}}</td>
+				   <td>{{ patient.date}}</td>
+				   <td>{{ patient.symptoms}}</td>
+				   <td>{{ patient.disease}}</td>
+				   <td>{% if patient.status == "" %}Pending... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>{% else %}<span class="badge bg-primary">{{ patient.status }}</span>{% endif %}</td>
+				   <td><a href="{% url 'edit_status' patient.id %}" class="btn btn-success">Update</a></td>
+				</tr>
+		    {%endfor%}
+			</tbody>
+		</table>
+</body>
+</html>

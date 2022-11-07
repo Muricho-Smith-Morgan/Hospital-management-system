@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'bootstrap-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<head>
+		<title>Patient Data</title>
+	</head>
+	<body>
+	<nav class="navbar"> 
+		<div class="heading">
+			<h2>ROYAL HOPE MEDICAL CENTER</h2>
+		
+	</div>
+		<ul class="links-container">
+			<li class="link-item"><a href="{%url 'hello'%}">Home</a></li>
+			<div class="dropdown">
+				<button class="dropbtn">Patient</button>
+				<div class="dropdown-content">
+				  <a href="{%url 'Add_patient'%}">Add Patient</a>
+				  <a href="{%url 'View_patient'%}">View Patient</a>
+				</div>
+			  </div>
+			<li class="link-item"><a href="{%url 'Emergency'%}">Emergency</a></li>
+			<li class="link-item"><a href="{%url 'Receptionist'%}">Log Out</a></li>
+		</ul> 
+	</nav>
+	<h1 style="text-align: center;">View Patient</h1>
+</body>
+</html>
+	<table class="table table-condensed table-bordered">
+		<thead>
+			<tr class="table-info">
+                <th>No.</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+				<th>Residence</th>
+				<th>National ID</th>
+				<th>DATE</th>
+				<th>STATUS</th>
+				<th>Update</th>
+				<th>Delete</th>
+			</tr>
+			</thead>
+			{% for x in mymembers %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+                   <td>{{ x.first_name}}</td>
+				   <td>{{ x.email}}</td>
+				   <td>{{ x.phone_number}}</td>
+				   <td>{{ x.residence}}</td>
+				   <td>{{ x.national_id}}</td>
+				   <td>{{ x.date}}</td>
+				   <td>{% if x.status == "" %}Pending... <span class="spinner-border spinner-border-sm text-primary" role="status" aria-hidden="true"></span>{% else %}<span class="badge bg-primary">{{ x.status }}</span>{% endif %}</td>
+				   <td><a href="{% url 'edit_patient' x.id %}" class="btn btn-success btn-sm">Edit</a></td>
+				   <td><a href="{% url 'delete_patient' x.id %}" class="btn btn-danger btn-sm">Delete <i class="bi bi-trash-fill"></i></a></td>
+				</tr>
+		    {%endfor%}
+
+			</table>
+			<!--Export links-->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination justify-content-center export-pagination">
+					<li class="page-item">
+						<a class="page-link" href="#"><span class="bi bi-download"></span> csv</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#"><span class="bi bi-printer"></span>  print</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#"><span class="bi bi-file-pdf"></span> PDF</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="#"><span class="bi bi-file-excel"></span> Excel</a>
+					</li>
+				</ul>
+			</nav
+	</body>
+</html>

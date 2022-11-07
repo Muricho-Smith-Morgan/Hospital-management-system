@@ -1,0 +1,63 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<link rel="stylesheet" href="{% static 'hello.css' %}">
+	<title>contact</title>
+</head>
+<style>
+	.mydivstyle:hover{
+		box-shadow:0 0 20px rgba(0,0,0,0.3);
+		transform:translatey(-20px);
+	}
+</style>
+<body>
+	<nav>
+		<nav class="navbar"> 
+			<div class="heading">
+				<h2>ROYAL HOPE MEDICAL CENTER</h2>
+			
+		</div>
+			<ul class="links-container">
+				<li class="link-item"><a href="{%url 'hello'%}">Home</a></li>
+				<div class="dropdown">
+					<button class="dropbtn">Login</button>
+					<div class="dropdown-content">
+					  <a href="{%url 'Receptionist'%}">Receptionist</a>
+					  <a href="{%url 'Doctor'%}">Doctor</a>
+					</div>
+				  </div>
+				<li class="link-item"><a href="{%url 'About'%}">About</a></li>
+			</ul> 
+		</nav>
+</body>
+<div class="container" style="margin-top: 50px;">
+	<h1 class="text-center">Contact Us</h1>
+	<div class="row mt-5 text-center">
+		<div class="col-lg-3 mydivstyle">
+			<h4><i class="fas fa-phone-square"> Contact</i></h4>
+			<p class="text-danger font-weight-bold mt-3"><a href="tel:+254110485927">+254110485927</a></p>
+		</div>
+		<div class="col-lg-3 mydivstyle">
+			<h4><i class="fa fa-envelope "></i> Send-email</h4>
+			<p class="font-weight-bold mt-3"><a href="mailto: smithmurichomorgan@gmail.com">morgan@gmail.com</a></p>
+		</div>
+		<div class="col-lg-3 mydivstyle">
+			<h4><i class="fa fa-address-card" aria-hidden="true"></i> Office Address</h4>
+            <p class="font-weight-bold mt-3"><a href="http://maps.google.com/maps?q='Webuye">Webuye</a></p>
+		</div>
+		<div class="col-lg-3 mydivstyle">
+			<h4><i class="fa fa-address-card" aria-hidden="true"></i> Office Time</h4>
+			 <p class="font-weight-bold mt-3">10AM to 5pm</p>
+		</div>
+	
+	</div>
+	
+</div>
+
+</html>
