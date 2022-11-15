@@ -1,0 +1,89 @@
+
+    {%load static %}
+    <!DOCTYPE html>
+     <html>
+       <head>
+        <!--Let browser know website is optimized for mobile-->
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+         <link rel="stylesheet" href="{% static 'bootstrap.min.icons' %}">
+         <link rel="stylesheet" href="{% static 'index.css' %}">
+       </head>
+       <style>
+        
+       </style>
+       <body>
+        <nav style="background-color: dodgerblue;"> 
+          <h2 class="heading text-center">ONLINE ROOM BOOKING</h2>
+          <div class="nav-links" id="navLinks">
+            <ul>
+              <li><a href="{% url 'index' %}">HOME</a></li>
+              <li><a href="{% url 'login' %}">LOGIN</a></li>
+              <li><a href="{% url 'index' %}">AbOUT US</a></li>
+            </ul>
+          </div>
+       </nav>
+      
+<div class="row" >
+    <div class="center">
+    <h4 class=" text-center blue-text" style="font-family: 'Pacifico', cursive;margin: 4rem 0 4% 0;font-size:4rem">Looking for a room! </h4>
+    <h4 class=" text-center blue-text" style="font-family: 'Pacifico', cursive;margin: 0 0 4% 0;line-height: 25%;font-size:2.5rem">We have it ready for you...</h4>
+    </div>
+    <div id="slider">
+      <button  class=" btn btn-warning">Book Now</button>
+        <ul id="slideWrap">
+            <li><img src="{% static '1.jpg'%}" alt=""></li>
+
+        </ul>
+    
+    </div>
+
+    <div id="slider">
+      <a href="{% url 'book'%}" class="btn btn-warning">Book Now</a>
+        <ul id="slideWrap">
+            <li><img src="{% static '2.jpg'%}" alt=""></li>
+
+        </ul>
+    
+    </div>
+
+    <div id="slider">
+      <a href="{% url 'book'%}" class="btn btn-warning">Book Now</a>
+      <ul id="slideWrap">
+          <li><img src="{% static '3.jpg'%}" alt=""></li>
+
+      </ul>
+      <button class="btn btn-warning">book</button>
+  </div>
+
+
+ 
+
+    <div id="slider">
+      <button  class=" btn btn-warning">Book Now</button>
+        <ul id="slideWrap">
+            <li><img src="{% static '9.jpg'%}" alt=""></li>
+
+        </ul>
+    
+    </div>
+
+    <div id="slider">
+      <a href="{% url 'book'%}" class="btn btn-warning">Book Now</a>
+        <ul id="slideWrap">
+            <li><img src="{% static '5.jpg'%}" alt=""></li>
+
+        </ul>
+    
+    </div>
+
+    <div id="slider">
+      <a href="{% url 'book'%}" class="btn btn-warning">Book Now</a>
+      <ul id="slideWrap">
+          <li><img src="{% static '6.jpg'%}" alt=""></li>
+
+      </ul>
+      <button class="btn btn-warning">book</button>
+  </div>
+       </body>
+     </html>

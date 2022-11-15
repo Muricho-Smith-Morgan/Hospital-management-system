@@ -1,0 +1,21 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Book Room</title>
+		<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	</head>
+	<body>
+	<div class="row">
+		<div class="col-md-6 offset-sm-3">  
+			<form action="" method="post" class="card card-body mt-3">
+				{% csrf_token %}
+				<h4 class="text-center">Reservation Information Form</h4>
+				{{form|crispy}}
+				<button type="submit" class="btn btn-warning">Book Now</button>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+{% load crispy_forms_tags%}
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'styles.css' %}">
+	<link rel="stylesheet" href="{% static 'responsive.css' %}">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+</head>
+
+<body class="auth-bg">
+	
+	<div class="wrapper">
+		<!-- Page Content  -->
+		<div id="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 auth-box">
+						<div class="proclinic-box-shadow">
+							<h3 class="widget-title">Login</h3>
+							
+							<form class="widget-form" method="post">
+								{% csrf_token%}
+								{{login_form|crispy}}
+								<button type="submit">Login</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Page Content  -->
+	</div>
+
+</body>
+
+
+</html>
