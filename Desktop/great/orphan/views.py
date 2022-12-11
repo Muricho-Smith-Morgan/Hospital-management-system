@@ -15,3 +15,21 @@ def event(request):
 
 def blog(request):
     return render(request, 'orphan/blog.html',)
+
+def single(request):
+    return render(request, 'orphan/single.html',)
+
+def service(request):
+    return render(request, 'orphan/service.html',)
+
+def team(request):
+    return render(request, 'orphan/team.html',)
+
+def donate(request):
+    return render(request, 'orphan/donate.html',)
+
+def volunteer(request):
+    return render(request, 'orphan/volunteer.html',)
+
+def contact(request):
+    return render(request, 'orphan/contact.html',)
